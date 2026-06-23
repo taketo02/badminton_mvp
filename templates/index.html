@@ -8,36 +8,49 @@
 </head>
 <body>
     <h1>Badminton Rally Data Collector</h1>
+
     <div class="container">
         <canvas id="badminton-court" width="600" height="700"></canvas>
+
         <div class="controls">
             <label for="GameName">GameName:</label>
-            <input type="text" id="Game-Name" placeholder="GameNameを入力" value="">
+            <input type="text" id="Game-Name" placeholder="GameNameを入力">
+
             <label for="playerA">Top:</label>
-            <input type="text" id="top" placeholder="コート上の選手名を入力" value="">
+            <input type="text" id="top" placeholder="コート上の選手名を入力">
+
             <label for="playerB">Bottom:</label>
-            <input type="text" id="bottom" placeholder="コート下の選手名を入力" value="">
+            <input type="text" id="bottom" placeholder="コート下の選手名を入力">
+
             <label>サーブ側の選手:</label>
             <select id="serve-side">
-            <option value="top">上側の選手(先攻) </option>
-            <option value="bottom">下側の選手(先攻) </option>
+                <option value="top">上側の選手(先攻)</option>
+                <option value="bottom">下側の選手(先攻)</option>
             </select>
+
             <fieldset>
-            <form>
-            <label  for="shot-type">Shot Type:</label><br>
-                <label><input type="radio" id="serve" name="shot-type" value="Serve">Serve</label><br>
-                <label><input type="radio" id="clear" name="shot-type" value="Clear">Clear</label><br>
-                <label><input type="radio" id="drop" name="shot-type" value="Drop">Drop</label><br>
-                <label><input type="radio" id="smash" name="shot-type" value="Smash">Smash</label><br>
-                <label><input type="radio" id="drive" name="shot-type" value="Drive">Drive</label><br>
-                <label><input type="radio" id="net shot" name="shot-type" value="Net Shot">Net Shot</label><br>
-                <label><input type="radio" id="hairpin net shot" name="shot-type" value="HairPin Net Shot">HairPin Net Shot</label><br>
-            </form>
+                <legend>Shot Type</legend>
+
+                <label><input type="radio" name="shot-type" value="Serve">Serve</label><br>
+                <label><input type="radio" name="shot-type" value="Clear">Clear</label><br>
+                <label><input type="radio" name="shot-type" value="Drop">Drop</label><br>
+                <label><input type="radio" name="shot-type" value="Smash">Smash</label><br>
+                <label><input type="radio" name="shot-type" value="Drive">Drive</label><br>
+                <label><input type="radio" name="shot-type" value="Net Shot">Net Shot</label><br>
+                <label><input type="radio" name="shot-type" value="HairPin Net Shot">HairPin Net Shot</label><br>
             </fieldset>
+
             <button id="save-rally-btn">Save Rally Data</button>
             <button id="clear-btn">Clear</button>
+
+            <!-- CSVダウンロードボタン -->
+            <a href="/download_csv">
+                <button type="button">Download CSV</button>
+            </a>
+
         </div>
     </div>
+
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
